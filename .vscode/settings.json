@@ -1,0 +1,6 @@
+{
+  "[FILE EXTENSION OF STEP 3].lint.unknownAtRules": "ignore",
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  }
+}
