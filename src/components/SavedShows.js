@@ -56,7 +56,7 @@ const SavedShows = () => {
           {movies.map((item) => (
             <div
               key={item.id}
-              className="w-[240px] h-[300px] sm:w-[200px] md:w-[240px] lg:w-[240px] inline-block relative p-2 md:hover:scale-105 ease-out cursor-pointer transition duration-200"
+              className="w-[240px] h-72 sm:w-[200px] md:w-[240px] lg:w-[190px] inline-block relative p-2 md:hover:scale-105 ease-out cursor-pointer transition duration-200"
             >
               <img
                 className="w-full h-full object-cover block"
