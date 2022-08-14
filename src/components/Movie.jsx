@@ -40,7 +40,7 @@ const Movie = ({ item }) => {
       />
       <div className="absolute top-0 left-0 w-full h-[100%] hover:bg-black/40 opacity-0 hover:opacity-100 text-white">
         <p className="white-space-normal text-xs md:text-sm fond-bold flex justify-center items-center h-full text-center">
-          {item?.title}
+          {item?.title || item?.name}
         </p>
         <p onClick={saveShow}>
           {like ? (
