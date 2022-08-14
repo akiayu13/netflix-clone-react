@@ -10,12 +10,15 @@ const LandingPage = () => {
   const [email, setEmail] = useState("");
   const router = useNavigate();
   const [error, setError] = useState(false);
+  const [localEmail, setLocalEmail] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validator.isEmail(email)) {
       setError("Email is invalid");
     } else {
       localStorage.setItem("registrationEmail", email);
+      localStorage.getItem("registrationEmail");
+      setLocalEmail(email);
       router("/signup/1");
     }
   };

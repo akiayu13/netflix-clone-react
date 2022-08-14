@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import { AuthContextProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Account from "./pages/Account";
 import LandingPage from "./pages/LandingPage";
@@ -20,11 +19,12 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <Home />{" "}
+                <Home />
               </ProtectedRoute>
             }
           />
           <Route path="/new" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup1 />} />
           <Route path="/signup/1" element={<Signup1 />} />

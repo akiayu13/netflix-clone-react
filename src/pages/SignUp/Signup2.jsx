@@ -1,4 +1,3 @@
-import registrationStep1 from "../../images/registration-1.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { UserAuth } from "../../context/AuthContext";
@@ -7,7 +6,7 @@ export default function Signup2() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { user, signUp } = UserAuth();
+  const { signUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -20,7 +19,7 @@ export default function Signup2() {
       } else {
         setError(null);
         await signUp(email, password);
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       console.log(error);
@@ -28,6 +27,9 @@ export default function Signup2() {
     }
   };
   useEffect(() => {
+    const registrationEmail = localStorage.getItem("registrationEmail");
+    console.log(registrationEmail);
+    // console.log(this.state.localEmail);
     if (localStorage.getItem("registrationEmail")) {
       setEmail(localStorage.getItem("registrationEmail"));
     }
@@ -55,6 +57,7 @@ export default function Signup2() {
               type="email"
               placeholder="Email"
               autoComplete="email"
+              value={email}
             />
             <input
               onChange={(e) => setPassword(e.target.value)}
