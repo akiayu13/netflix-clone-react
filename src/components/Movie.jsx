@@ -27,17 +27,18 @@ const Movie = ({ item }) => {
   };
   return (
     <div
-      className="relative h-28 min-w-[180px] cursor-pointer transition duration-200
-        ease-out md:h-36 md:min-w-[260px] md:hover:scale-105"
+      className="relative h-36 min-w-[100px] cursor-pointer transition duration-200
+        ease-out md:h-72 md:min-w-[190px] md:hover:scale-105"
     >
+      {console.log(item)}
       <img
         // className="w-full h-auto block"
-        src={`http://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
+        src={`http://image.tmdb.org/t/p/w500/${item?.poster_path}`}
         alt={item?.title}
         layout="fill"
-        className="rounded-sm object-cover md:rounded"
+        className="rounded-sm object-cover h-full w-full block md:rounded"
       />
-      <div className="absolute top-0 left-0 w-full h-[102%] hover:bg-black/50 opacity-0 hover:opacity-100 text-white">
+      <div className="absolute top-0 left-0 w-full h-[100%] hover:bg-black/40 opacity-0 hover:opacity-100 text-white">
         <p className="white-space-normal text-xs md:text-sm fond-bold flex justify-center items-center h-full text-center">
           {item?.title}
         </p>

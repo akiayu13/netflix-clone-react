@@ -28,7 +28,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   };
   return (
     <>
-      <h2 className="text-white w-56 text-lg font-bold md:text-xl p-4 px-10 ">
+      <h2 className="text-white w-80 text-lg font-bold md:text-xl p-4 px-10 ">
         {title}
       </h2>
       <div className="relative flex items-center group px-10">
