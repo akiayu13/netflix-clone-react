@@ -17,7 +17,7 @@ const LandingPage = () => {
       setError("Email is invalid");
     } else {
       localStorage.setItem("registrationEmail", email);
-      localStorage.getItem("registrationEmail");
+      // localStorage.getItem("registrationEmail");
       setLocalEmail(email);
       router("/signup/1");
     }

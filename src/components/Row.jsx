@@ -6,6 +6,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
   const [isMoved, setIsMoved] = useState(false);
   const rowRef = useRef(null);
+
   useEffect(() => {
     axios.get(fetchURL).then((res) => {
       setMovies(res.data.results);
@@ -28,7 +29,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   };
   return (
     <>
-      <h2 className="text-white w-80 text-lg font-bold md:text-xl p-4 px-10 ">
+      <h2 className="text-white w-80 text-lg font-bold md:text-[25px] p-4 px-8 ">
         {title}
       </h2>
       <div className="relative flex items-center group px-10">
@@ -44,7 +45,9 @@ const Row = ({ title, fetchURL, rowID }) => {
           className="flex items-center overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2"
         >
           {movies.map((item, id) => (
-            <Movie key={id} item={item} />
+            <>
+              <Movie key={id} item={item} />
+            </>
           ))}
         </div>
         <ChevronRightIcon

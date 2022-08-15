@@ -11,7 +11,7 @@ export default function Signup2() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(validator.isEmail(email));
+    // console.log(validator.isEmail(email));
 
     try {
       if (!validator.isEmail(email)) {
@@ -28,7 +28,7 @@ export default function Signup2() {
   };
   useEffect(() => {
     const registrationEmail = localStorage.getItem("registrationEmail");
-    console.log(registrationEmail);
+    // console.log(registrationEmail);
     // console.log(this.state.localEmail);
     if (localStorage.getItem("registrationEmail")) {
       setEmail(localStorage.getItem("registrationEmail"));

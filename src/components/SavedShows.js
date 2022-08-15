@@ -20,13 +20,13 @@ const SavedShows = () => {
 
   useEffect(() => {
     onSnapshot(doc(db, "users", `${user?.email}`), (doc) => {
-      console.log(doc.data());
+      // console.log(doc.data());
       setMovies(doc.data()?.savedShows);
     });
   }, [user?.email]);
 
   const movieRef = doc(db, "users", `${user?.email}`);
-  console.log(movieRef);
+  // console.log(movieRef);
   const deleteShow = async (passedID) => {
     try {
       const result = movies.filter((item) => item.id !== passedID);
@@ -37,10 +37,20 @@ const SavedShows = () => {
       console.log(error);
     }
   };
+  const handleClick = (item) => {
+    const id = item.id;
+    localStorage.setItem("id", id);
+    localStorage.setItem(
+      "fetchURL",
+      `https://api.themoviedb.org/3/movie/${item?.id}/videos?api_key=32b35a28d4d82d34584f147a9ecb560e&language=en-US)`
+    );
+
+    window.open("/nowWatching", "_blank");
+  };
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4 pt-5 pb-14">
+      <h2 className="text-gray-200 font-bold md:text-[25px] p-8 pt-10 pb-5">
         My Shows
       </h2>
       <div className="relative flex items-center group px-8 pb-32">
@@ -64,7 +74,10 @@ const SavedShows = () => {
                 alt={item?.title}
               />
               <div className="absolute top-0 left-0 w-full h-full hover:bg-[#101010]/60 opacity-0 hover:opacity-100 text-white">
-                <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
+                <p
+                  className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center"
+                  onClick={() => handleClick(item)}
+                >
                   {item?.title}
                 </p>
                 <p

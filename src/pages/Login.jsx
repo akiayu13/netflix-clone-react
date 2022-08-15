@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import validator from "validator";
+import { toast } from "tailwind-toast";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +19,18 @@ const Login = () => {
       } else {
         setError(null);
         await logIn(email, password);
+        toast()
+          .default("", "Welcome!")
+          .with({
+            shape: "rounded-full",
+            duration: 1500,
+            speed: 100,
+            positionX: "center",
+            positionY: "bottom",
+            color: "bg-black/50 text-white",
+            fontTone: 200,
+          })
+          .show();
         navigate("/");
       }
     } catch (error) {

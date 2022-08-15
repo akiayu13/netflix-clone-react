@@ -9,6 +9,7 @@ import Account from "./pages/Account";
 import LandingPage from "./pages/LandingPage";
 import Signup1 from "./pages/SignUp/Signup1";
 import Signup2 from "./pages/SignUp/Signup2";
+import MovieDetails from "./pages/MovieDetails";
 function App() {
   return (
     <Fragment>
@@ -24,6 +25,7 @@ function App() {
             }
           />
           <Route path="/new" element={<LandingPage />} />
+          <Route path="/nowWatching" element={<MovieDetails />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup1 />} />
