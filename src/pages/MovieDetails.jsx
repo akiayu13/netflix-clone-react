@@ -33,10 +33,8 @@ const MovieDetails = () => {
       const videos = res.data.results;
       console.log(videos.length + videos);
       if (videos.length) {
-        videos?.map((item) => {
-          if (item.type === "Trailer")
-            setVid(`https://www.youtube.com/watch?v=${item.key}`);
-        });
+        let item = videos?.filter((item) => item.type === "Trailer");
+        setVid(`https://www.youtube.com/watch?v=${item[0].key}`);
       }
     });
     if (localStorage.getItem("playing") == "true") {
