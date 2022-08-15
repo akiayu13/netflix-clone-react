@@ -44,7 +44,7 @@ const Row = ({ title, fetchURL, rowID }) => {
           ref={rowRef}
           className="flex items-center overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2"
         >
-          {movies.map((item, id) => (
+          {movies?.map((item, id) => (
             <>
               <Movie key={id} item={item} />
             </>

@@ -32,7 +32,7 @@ const MovieDetails = () => {
     axios.get(fetchURL).then((res) => {
       const videos = res.data.results;
       console.log(videos.length + videos);
-      if (videos.length) {
+      if (videos?.length) {
         let item = videos?.filter((item) => item.type === "Trailer");
         setVid(`https://www.youtube.com/watch?v=${item[0].key}`);
       }
