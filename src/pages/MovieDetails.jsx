@@ -14,7 +14,7 @@ const MovieDetails = () => {
   const [display, setDisplay] = useState("none");
   const [fetchURL, setFetchURL] = useState("");
   const [playing, setPlaying] = useState(false);
-  const [similar, setSimilar] = useState([]);
+  const [similar, setSimilar] = useState("");
   const [vid, setVid] = useState("");
   const ref = useRef();
   const handleClick = () => {
@@ -44,7 +44,7 @@ const MovieDetails = () => {
     setSimilar(
       `https://api.themoviedb.org/3/movie/${id}/similar?api_key=32b35a28d4d82d34584f147a9ecb560e&language=en-US`
     );
-  }, [fetchURL, vid]);
+  }, [fetchURL, setSimilar]);
   const saveShow = async () => {
     if (user?.email) {
       await updateDoc(movieID, {
@@ -128,7 +128,9 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className="p-0 m-0 pb-20">
-        <Row title="Similar Movies" fetchURL={similar} rowId="10" />
+        {similar != "" && (
+          <Row title="Similar Movies" fetchURL={similar} rowId="10" />
+        )}
       </div>
     </div>
   );
