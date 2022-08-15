@@ -44,7 +44,7 @@ const Movie = ({ item }) => {
       {/* {console.log(link)} */}
       <img
         // className="w-full h-auto block"
-        src={`http://image.tmdb.org/t/p/w500/${item?.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${item?.poster_path}`}
         alt={item?.title}
         layout="fill"
         className="rounded-sm object-cover h-full w-full block md:rounded"
