@@ -100,9 +100,14 @@ const MovieDetails = () => {
           <p className="w-full md:max-w-[70%] text-[18px] lg:max-w-[50%] xl:max-w-[55%] text-gray-400">
             {movie?.release_date}
           </p>
-          <p className="pt-10 font-bold text-gray-200 text-[25px]">Synopsis</p>
+
+          <p className="pt-5 font-bold text-gray-200 text-[25px]">Synopsis</p>
           <p className="w-full md:max-w-[70%] text-[20px] lg:max-w-[50%] xl:max-w-[55%] text-gray-300">
             {movie?.overview}
+          </p>
+          <p className="pt-5 font-bold text-gray-200 text-[20px]">Ratings </p>
+          <p className=" w-full md:max-w-[70%] text-[18px] lg:max-w-[50%] xl:max-w-[55%] text-gray-400">
+            {movie?.vote_average}
           </p>
         </div>
       </div>

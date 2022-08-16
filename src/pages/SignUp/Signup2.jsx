@@ -16,10 +16,13 @@ export default function Signup2() {
     try {
       if (!validator.isEmail(email)) {
         setError("Email is invalid");
-      } else {
+      } else if (password.length < 8)
+        setError("Password should be minimum 8 characters long");
+      else {
         setError(null);
         await signUp(email, password);
         navigate("/home");
+        localStorage.removeItem("registrationEmail");
       }
     } catch (error) {
       console.log(error);
