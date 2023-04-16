@@ -53,7 +53,7 @@ const FAQSection = () => {
         {faqData.map((faq, index) => (
           <div
             key={index}
-            className="w-full md:w-4/5 lg:w-3/4 xl:w-5/6 mx-auto mb-4 bg-gray-700 rounded-md px-4 py-3 cursor-pointer"
+            className="w-full md:w-4/5 lg:w-3/4 xl:w-5/6 mx-auto mb-4 bg-gray-900 rounded-md px-4 py-3 cursor-pointer"
             onClick={() => toggleAnswer(index)}
           >
             <div className="flex items-center justify-between text-xl font-semibold mb-3">

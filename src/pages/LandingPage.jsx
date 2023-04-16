@@ -45,6 +45,7 @@ const LandingPage = () => {
             Ready to watch? <br className="sm:hidden" /> Enter your email to
             create or restart your membership.
           </p>
+
           {error && (
             <p className="text-red-600 w-[90%] md:w-[60%] text-[23px] text-center">
               {error}

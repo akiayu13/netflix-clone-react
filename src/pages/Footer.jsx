@@ -4,15 +4,15 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-6">
       <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between items-center">
-          <div className="flex items-center">
+        <div className="flex flex-wrap justify-center items-center sm:justify-between">
+          <div className="flex items-center mb-4 sm:mb-0">
             <img
               src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
               alt="Netflix Logo"
               className="h-12 mr-4"
             />
           </div>
-          <ul className="flex items-center">
+          <ul className="flex items-center flex-wrap sm:flex-nowrap justify-center sm:justify-start">
             <li className="mr-4">
               <a href="#about" className="text-gray-400 hover:text-white">
                 About Us
@@ -28,9 +28,29 @@ const Footer = () => {
                 Terms of Use
               </a>
             </li>
-            <li>
+            <li className="mr-4">
               <a href="#privacy" className="text-gray-400 hover:text-white">
                 Privacy Policy
+              </a>
+            </li>
+            <li className="mr-4">
+              <a href="#cookie" className="text-gray-400 hover:text-white">
+                Cookie Preferences
+              </a>
+            </li>
+            <li className="mr-4">
+              <a href="#corporate" className="text-gray-400 hover:text-white">
+                Corporate Information
+              </a>
+            </li>
+            <li className="mr-4">
+              <a href="#speed" className="text-gray-400 hover:text-white">
+                Speed Test
+              </a>
+            </li>
+            <li>
+              <a href="#legal" className="text-gray-400 hover:text-white">
+                Legal Notices
               </a>
             </li>
           </ul>
