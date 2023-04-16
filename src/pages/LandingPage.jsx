@@ -38,10 +38,12 @@ const LandingPage = () => {
           <h1 className="pt-20 text-center w-[90%] md:w-[600px] m-auto text-bold text-[60px]">
             Unlimited movies, TV shows and more.
           </h1>
-          <h2 className="text-[30px]">Watch anywhere. Cancel anytime.</h2>
-          <p className="w-max text-[20px] pb-5 text-center">
-            Ready to watch? Enter your email to create or restart your
-            membership.
+          <h2 class="text-3xl sm:text-4xl text-center">
+            Watch anywhere. Cancel anytime.
+          </h2>
+          <p className="w-max text-lg sm:text-xl pb-5 text-center">
+            Ready to watch? <br className="sm:hidden" /> Enter your email to
+            create or restart your membership.
           </p>
           {error && (
             <p className="text-red-600 w-[90%] md:w-[60%] text-[23px] text-center">
