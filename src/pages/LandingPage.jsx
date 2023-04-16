@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import validator from "validator";
 import Footer from "./Footer";
 import FAQSection from "./FAQSection";
+import HeroSection from "./HeroSection";
 
 const LandingPage = () => {
   const [email, setEmail] = useState("");
