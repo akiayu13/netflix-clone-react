@@ -1,4 +1,3 @@
-// import styles from "./style.scss";
 import ReactPlayer from "react-player";
 
 export default function Section({
@@ -6,79 +5,53 @@ export default function Section({
   header,
   subheader,
   image,
-  videoUrl,
   imageWidth,
   imageHeight,
-  videoStyles,
 }) {
   return (
-    <section className="bg-black flex h-[600px] px-[100px]">
+    <section className="bg-black flex flex-wrap h-auto md:h-[600px] px-5 md:px-[100px]">
       {contentleft ? (
         <>
-          <div className="m-auto w-[30%]">
-            <h1 className="text-white font-bold text-[3.125rem]">{header}</h1>
-            <h2 className="text-xl text-white xs:text-3xl font-normal mt-5 mb-1 pr-10">
-              {subheader}
-            </h2>
+          <div className="m-auto w-full md:w-2/5 order-2 md:order-none">
+            <div className="md:pl-10 flex flex-col justify-center h-full">
+              <h1 className="text-white font-bold text-3xl md:text-[3.125rem]">
+                {header}
+              </h1>
+              <h2 className="text-xl md:text-3xl text-white font-normal mt-5 mb-1">
+                {subheader}
+              </h2>
+            </div>
           </div>
-          <div className="w-50">
+          <div className="w-full md:w-3/5 order-1 md:order-none">
             {image && (
               <img
-                className="z-1"
+                className="z-1 h-full object-cover"
                 src={image}
                 width={imageWidth}
                 height={imageHeight}
               />
-            )}
-            {videoUrl && (
-              <div
-                className="relative w-[50%]"
-                style={{ left: videoStyles.left, bottom: videoStyles.bottom }}
-              >
-                <ReactPlayer
-                  url={videoUrl}
-                  muted
-                  playing
-                  autoPlay
-                  loop
-                  width="470px"
-                  height="260px"
-                />
-              </div>
             )}
           </div>
         </>
       ) : (
         <>
-          <div className="w-[50%]">
-            {videoUrl && (
-              <div
-                className="relative w-[50%]"
-                style={{ left: videoStyles.left, bottom: videoStyles.bottom }}
-              >
-                <ReactPlayer
-                  url={videoUrl}
-                  muted
-                  playing
-                  autoPlay
-                  loop
-                  width="470px"
-                  height="260px"
-                />
-              </div>
-            )}
+          <div className="w-full md:w-3/5 order-1 md:order-none">
             {image && (
               <img
-                className="z-1"
+                className="z-1 h-full object-cover"
                 src={image}
                 width={imageWidth}
                 height={imageHeight}
               />
             )}
           </div>
-          <div className="m-auto w-[30%]">
-            <h1 className="text-white font-bold text-[3.125rem]">{header}</h1>
-            <h2 className="text-white text-xl">{subheader}</h2>
+          <div className="m-auto w-full md:w-2/5 order-2 md:order-none mt-5 md:mt-0">
+            <div className="md:pr-10 flex flex-col justify-center h-full">
+              <h1 className="text-white font-bold text-3xl md:text-[3.125rem]">
+                {header}
+              </h1>
+              <h2 className="text-white text-xl md:text-3xl">{subheader}</h2>
+            </div>
           </div>
         </>
       )}

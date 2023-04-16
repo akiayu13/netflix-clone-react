@@ -19,9 +19,11 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
       <Link to="/">
-        <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
-          NETFLIX
-        </h1>
+        <img
+          src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
+          alt="Netflix Logo"
+          className="h-10 mr-5"
+        />
       </Link>
       {user?.email ? (
         <div className="flex">
