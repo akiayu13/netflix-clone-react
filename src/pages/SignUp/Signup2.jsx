@@ -38,7 +38,7 @@ export default function Signup2() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen flex justify-center items-center">
+    <div className="px-10 bg-white min-h-screen flex justify-center items-center">
       <div className="flex flex-col w-40% h-full my-10 mx-auto text-left">
         <p className="my-4">
           STEP <b>2</b> OF <b>2</b>
